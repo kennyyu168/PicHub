@@ -1,4 +1,4 @@
 # GIT IGNORE #
 .DS_Store
 Thumbs.db
-_pycache_/
+#__pycache__/
