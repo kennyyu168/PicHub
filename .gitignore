@@ -1,0 +1,4 @@
+# GIT IGNORE #
+.DS_Store
+Thumbs.db
+_pycache_
