@@ -8,13 +8,13 @@ rm -r __pycache__/
 echo "[*] caches removed"
 echo "[*] running PicHub server"
 echo "[*] Status: Ready"
-echo "[*] Run: export FLASK_APP=main"
-export FLASK_APP=main
+echo "[*] Run: export FLASK_APP=pichub"
+export FLASK_APP=pichub
 echo "[*] Run: flask run"
 echo "[*]"
 echo "[*] PicHub"
+echo "[*] One stop shop for your photo portfolio"
 echo "[*] Developed by: Alan Tsui, Kenny Yu"
-echo "[*] One Stop Shop for Your Photo Portfolio"
 echo "[*] Status: Running"
 echo "[*]"
 flask run
