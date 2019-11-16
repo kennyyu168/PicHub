@@ -60,6 +60,7 @@ def get_images(username):
                 links.append(line)
     f.close()
     # downloads the images to /imgur folder
+    counter = 1
     for link in links:
         response = requests.get(link)
         if response.status_code == 200:
@@ -72,5 +73,3 @@ def get_images(username):
 def get_account(username):
     command = 'curl --location --request GET "https://api.imgur.com/3/account/' + username + '" \--header "Authorization: Client-ID df4cc21b8273314" >> imgur_account.json'
     os.system(command)
-
-get_images(username)

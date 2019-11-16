@@ -10,6 +10,10 @@ rm -r *.json
 echo "[*] Run: rm -r *.pyc"
 rm -r *.pyc
 echo "[*] caches removed"
+echo "[*] delete downloaded images"
+echo "[*] rm -r imgur/"
+rm -r imgur/
+mkdir imgur/
 echo "[*] running PicHub server"
 echo "[*] Status: Ready"
 echo "[*] Run: export FLASK_APP=pichub"

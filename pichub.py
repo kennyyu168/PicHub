@@ -6,6 +6,7 @@ app = Flask(__name__, template_folder="frontend", static_folder='frontend/static
 
 @app.route("/")
 def render_home():
+    imgur.get_images(imgur.username)
     return render_template("/home/index-gallery-main.html")
 
 @app.route("/login")

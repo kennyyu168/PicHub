@@ -4,6 +4,7 @@
 Thumbs.db
 __pycache__/
 pichub/
+imgur/
 *.pyc
 *.json
 *.txt
