@@ -8,5 +8,9 @@ app = Flask(__name__, template_folder="frontend", static_folder='frontend/static
 def render_home():
     return render_template("/home/index-gallery-main.html")
 
+@app.route("/login")
+def login_page():
+    return render_template("/login-page/index-login.html")
+
 if __name__ == '__main__':
     app.run(debug=True)
