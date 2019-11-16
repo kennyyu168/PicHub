@@ -5,3 +5,5 @@ Thumbs.db
 __pycache__/
 pichub/
 *.pyc
+*.json
+*.txt

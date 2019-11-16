@@ -5,6 +5,10 @@ echo "[*]"
 echo "[*] removing dumb caches"
 echo "[*] Run: rm -r __pycache__/"
 rm -r __pycache__/
+echo "[*] Run: rm -r *.json"
+rm -r *.json
+echo "[*] Run: rm -r *.pyc"
+rm -r *.pyc
 echo "[*] caches removed"
 echo "[*] running PicHub server"
 echo "[*] Status: Ready"
