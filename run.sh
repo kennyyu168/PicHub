@@ -2,18 +2,11 @@
 
 echo "++++++++++ SETTING UP PICHUB ++++++++++"
 echo "[*]"
-echo "[*] removing dumb caches"
-echo "[*] Run: rm -r __pycache__/"
-rm -r __pycache__/
-echo "[*] Run: rm -r *.json"
-rm -r *.json
-echo "[*] Run: rm -r *.pyc"
-rm -r *.pyc
-echo "[*] caches removed"
-echo "[*] delete downloaded images"
-echo "[*] rm -r imgur/"
-rm -r imgur/
-mkdir imgur/
+echo "[*] cleaning old files and caches"
+echo "[*] Run: make clean"
+echo "[*]"
+make clean
+echo "[*]"
 echo "[*] running PicHub server"
 echo "[*] Status: Ready"
 echo "[*] Run: export FLASK_APP=pichub"

@@ -3,6 +3,7 @@ import webbrowser
 import os
 import json
 import requests
+import shutil
 
 client_id = 'df4cc21b8273314'
 client_secret = 'ae0d06b7ade1d60d1ea6fe68481fb8df319bf821'
@@ -39,7 +40,7 @@ def get_images(username):
     init_command = 'rm *.txt'
     os.system(init_command)
     # get list of most recent pictures from imgur account
-    command = 'curl --location --request GET "https://api.imgur.com/3/account/username4pichub/images/" \--header "Authorization: Bearer ff8e2a90474a36962377f9013bdbd3619f8601fe" >> img_data.txt'
+    command = 'curl --location --request GET "https://api.imgur.com/3/account/' + username + '/images/" \--header "Authorization: Bearer ff8e2a90474a36962377f9013bdbd3619f8601fe" >> img_data.txt'
     os.system(command)
     # parses the file to only get the url to the pictures
     links = []
@@ -64,11 +65,24 @@ def get_images(username):
     for link in links:
         response = requests.get(link)
         if response.status_code == 200:
-            path = "/Users/alan/github/PicHub/imgur/img" + str(counter) + ".jpg"
+            path = "./imgur/img" + str(counter) + ".jpg"
             with open(path, 'wb') as img:
                 img.write(response.content)
             counter+=1
-    print("DONE")
+    print("DONE DOWNLOADING")
+
+    # load files to home
+    imgur_source = "./imgur/"
+    home_dest1 = "./frontend/static/h_images/fulls"
+    home_dest2 = "./frontend/static/h_images/thumbs"
+
+    files = os.listdir(imgur_source)
+
+    for img in files:
+        shutil.copy(imgur_source + img, home_dest1)
+        shutil.move(imgur_source + img, home_dest2)
+
+    print("DONE MOVING")
 
 def get_account(username):
     command = 'curl --location --request GET "https://api.imgur.com/3/account/' + username + '" \--header "Authorization: Client-ID df4cc21b8273314" >> imgur_account.json'

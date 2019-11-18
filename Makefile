@@ -14,4 +14,6 @@ clean:
 	-rm -f *.json
 	-rm -rf imgur/
 	-rm -rf __pycache__/
+	-rm -rf ./frontend/static/h_images/fulls/*.jpg
+	-rm -rf ./frontend/static/h_images/thumbs/*.jpg
 	mkdir -p imgur/
