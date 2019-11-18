@@ -11,3 +11,6 @@ Run the following commands
 ```
 source activate.sh
 ```
+```
+make run
+```
