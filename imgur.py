@@ -64,7 +64,7 @@ def get_images(username):
     for link in links:
         response = requests.get(link)
         if response.status_code == 200:
-            path = "/Users/alan/github/PicHub/imgur/img" + str(counter) + ".jpg"
+            path = "/Users/kenny/Desktop/PicHub/imgur/img" + str(counter) + ".jpg"
             with open(path, 'wb') as img:
                 img.write(response.content)
             counter+=1
