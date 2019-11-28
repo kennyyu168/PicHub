@@ -6,10 +6,10 @@ import requests
 import shutil
 
 client_id = 'df4cc21b8273314'
-client_secret = 'ae0d06b7ade1d60d1ea6fe68481fb8df319bf821'
+client_secret = '22711de5d4a1e798c2af674f0f036de70a44e881'
 # get token
 # https://api.imgur.com/oauth2/authorize?client_id=df4cc21b8273314&response_type=token
-token = 'ff8e2a90474a36962377f9013bdbd3619f8601fe'
+token = '8fbe3dad26282f0849cca4cb07bfae70289faa71'
 
 client = ImgurClient(client_id, client_secret)
 
@@ -25,22 +25,21 @@ username = "username4pichub"
     client.set_user_auth(credentials['access_token'], credentials['refresh_token'])
 """
 
+def authorize():
+    auth_url = client.get_auth_url('token')
+    webbrowser.open(auth_url, new=2)
+
 def get_links():
     items = client.gallery()
     for item in items:
         print(item.link)
-
-def get_token():
-    url = 'https://api.imgur.com/oauth2/authorize?client_id=df4cc21b8273314&response_type=token'
-    token_url = requests.get(url)
-    print(token_url.url)
 
 def get_images(username):
     # removes all .txt files
     init_command = 'rm *.txt'
     os.system(init_command)
     # get list of most recent pictures from imgur account
-    command = 'curl --location --request GET "https://api.imgur.com/3/account/' + username + '/images/" \--header "Authorization: Bearer ff8e2a90474a36962377f9013bdbd3619f8601fe" >> img_data.txt'
+    command = 'curl --location --request GET "https://api.imgur.com/3/account/' + username + '/images/" \--header "Authorization: Bearer ' + token +'" >> img_data.txt'
     os.system(command)
     # parses the file to only get the url to the pictures
     links = []
@@ -80,7 +79,7 @@ def get_images(username):
 
     for img in files:
         shutil.copy(imgur_source + img, home_dest1)
-        shutil.move(imgur_source + img, home_dest2)
+        shutil.copy(imgur_source + img, home_dest2)
 
     print("DONE MOVING")
 
