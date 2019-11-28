@@ -1,9 +1,5 @@
 from imgurpython import ImgurClient
-import webbrowser
-import os
-import json
-import requests
-import shutil
+import webbrowser, os, requests, shutil
 
 client_id = 'df4cc21b8273314'
 client_secret = '22711de5d4a1e798c2af674f0f036de70a44e881'
@@ -27,7 +23,7 @@ username = "username4pichub"
 
 def authorize():
     auth_url = client.get_auth_url('token')
-    webbrowser.open(auth_url, new=2)
+    webbrowser.open(auth_url, new=0, autoraise=True)
 
 def get_links():
     items = client.gallery()

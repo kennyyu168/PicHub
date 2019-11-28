@@ -5,9 +5,14 @@ Using a Flask backend, users will be able to create an account and input their u
 will grab their top photos and create a portfolio.
 
 
-How to Run
+Setup
 ----------
-Run the following commands
 ```
-source activate.sh
+pip install -r ./packages.req
+```
+
+Run
+----------
+```
+make
 ```
