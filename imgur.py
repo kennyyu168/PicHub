@@ -23,7 +23,7 @@ username = "username4pichub"
 
 def authorize():
     auth_url = client.get_auth_url('token')
-    webbrowser.open(auth_url, new=0, autoraise=True)
+    webbrowser.open(auth_url, new=2, autoraise=True)
 
 def get_links():
     items = client.gallery()
