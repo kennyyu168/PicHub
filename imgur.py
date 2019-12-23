@@ -35,7 +35,8 @@ def get_images(username):
     init_command = 'rm *.txt'
     os.system(init_command)
     # get list of most recent pictures from imgur account
-    command = 'curl --location --request GET "https://api.imgur.com/3/account/' + username + '/images/" \--header "Authorization: Bearer ' + token +'" >> img_data.txt'
+    command = 'curl --location --request GET "https://api.imgur.com/3/account/' + username \
+        + '/images/" \--header "Authorization: Bearer ' + token +'" >> img_data.txt'
     os.system(command)
     # parses the file to only get the url to the pictures
     links = []
@@ -80,5 +81,6 @@ def get_images(username):
     print("DONE MOVING")
 
 def get_account(username):
-    command = 'curl --location --request GET "https://api.imgur.com/3/account/' + username + '" \--header "Authorization: Client-ID df4cc21b8273314" >> imgur_account.json'
+    command = 'curl --location --request GET "https://api.imgur.com/3/account/' + username \
+        + '" \--header "Authorization: Client-ID df4cc21b8273314" >> imgur_account.json'
     os.system(command)
