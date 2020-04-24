@@ -1,11 +1,11 @@
 from imgurpython import ImgurClient
-import webbrowser, os, requests, shutil
+import webbrowser, os, requests, shutil, requests
 
 client_id = 'df4cc21b8273314'
 client_secret = '22711de5d4a1e798c2af674f0f036de70a44e881'
 # get token
 # https://api.imgur.com/oauth2/authorize?client_id=df4cc21b8273314&response_type=token
-token = '8fbe3dad26282f0849cca4cb07bfae70289faa71'
+token = '4762ac1140abe4a936dbf8249ac0d8dba4501181'
 
 client = ImgurClient(client_id, client_secret)
 
