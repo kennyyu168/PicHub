@@ -4,26 +4,8 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-
 <html>
 	<head>
-		<input url="token"></input>
-		<script>
-			// First, parse the query string
-			var params = {}, queryString = location.hash.substring(1),
-				regex = /([^&=]+)=([^&]*)/g, m;
-			while (m = regex.exec(queryString)) {
-			params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
-			}
-			// And send the token over to the servers
-			var req = new XMLHttpRequest();
-			// consider using POST so query isn't logged
-			req.open('GET', 'https://' + window.location.host + '/catchtoken?' + queryString, true);
-			console.log(window.location.href);
-			var url = window.location.href;
-			document.getElementById("token").value = url;
-		</script>
-
 		<title>PicHub</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
