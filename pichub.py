@@ -1,6 +1,5 @@
 from flask import Flask, render_template
-import imgur
-import os
+import imgur, os
 
 app = Flask(__name__, template_folder="frontend", static_folder='frontend/static')
 

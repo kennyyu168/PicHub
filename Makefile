@@ -1,17 +1,18 @@
 #set noexpandtab
 
-.PHONY: run clean
+.PHONY: run install clean
 
 all: run
 
 run:
 	./run.sh
 
+install:
+	pip install -r requirements.txt
+
 clean:
 	@echo "Cleaning up..."
-	-rm -f *.txt
 	-rm -f *.pyc
-	-rm -f *.json
 	-rm -rf imgur/
 	-rm -rf __pycache__/
 	-rm -rf ./frontend/static/h_images/fulls/*.jpg
