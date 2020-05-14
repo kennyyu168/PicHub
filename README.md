@@ -9,13 +9,10 @@ will grab their top photos and create a portfolio.
 
 ## Setup
 ```
-pip install -r ./packages.req
+make run
 ```
 
 ## Run
 ```
 make
-```
-```
-make run
 ```
