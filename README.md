@@ -8,13 +8,11 @@ will grab their top photos and create a portfolio.
 
 
 ## Setup
-----------
 ```
 pip install -r ./packages.req
 ```
 
 ## Run
-----------
 ```
 make
 ```
