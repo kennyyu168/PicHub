@@ -9,7 +9,7 @@ will grab their top photos and create a portfolio.
 
 ## Setup
 ```
-make run
+make install
 ```
 
 ## Run
