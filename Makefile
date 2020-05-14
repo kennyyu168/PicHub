@@ -13,6 +13,7 @@ install:
 clean:
 	@echo "Cleaning up..."
 	-rm -f *.pyc
+	-rm -rf img_data.txt
 	-rm -rf imgur/
 	-rm -rf __pycache__/
 	-rm -rf ./frontend/static/h_images/fulls/*.jpg
